@@ -44,7 +44,7 @@ RUN locale-gen en_US.UTF-8
 RUN echo "source /etc/bash_completion" >> /root/.bashrc
 
 # rust support
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y --no-modify-path --profile minimal
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y --no-modify-path --profile minimal --default-toolchain stable
 RUN if test "$platform" = "modduo" || test "$platform" = "modduo-new" || test "$platform" = "modduo-static"; then \
         ~/.cargo/bin/rustup target add armv7-unknown-linux-gnueabihf; \
     elif test "$platform" = "modduox" || test "$platform" = "modduox-new" || test "$platform" = "modduox-static"; then \
