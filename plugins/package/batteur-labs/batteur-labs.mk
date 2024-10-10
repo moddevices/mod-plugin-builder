@@ -1,0 +1,25 @@
+######################################
+#
+# batteur-labs
+#
+######################################
+
+BATTEUR_LABS_VERSION = f33d10fb7229c7f2e40f1adc6cf3ee190ca51239
+BATTEUR_LABS_SITE = https://github.com/paulfd/batteur.git
+BATTEUR_LABS_SITE_METHOD = git
+BATTEUR_LABS_DEPENDENCIES = host-cmake
+BATTEUR_LABS_CONF_OPTS  = -DBATTEUR_TESTS=OFF
+BATTEUR_LABS_CONF_OPTS += -DBATTEUR_TOOLS=OFF
+BATTEUR_LABS_CONF_OPTS += -DBATTEUR_SHARED=OFF
+BATTEUR_LABS_CONF_OPTS += -DBATTEUR_LV2=ON
+BATTEUR_LABS_CONF_OPTS += -DBUILD_SHARED_LIBS=FALSE
+BATTEUR_LABS_BUNDLES = batteur.lv2
+
+# needed for submodules support
+BATTEUR_LABS_PRE_DOWNLOAD_HOOKS += MOD_PLUGIN_BUILDER_DOWNLOAD_WITH_SUBMODULES
+
+define BATTEUR_LABS_POST_INSTALL_TARGET_TTLFILES
+	cp -rL $($(PKG)_PKGDIR)/batteur.lv2/* $(TARGET_DIR)/usr/lib/lv2/batteur.lv2/
+endef
+
+$(eval $(cmake-package))
