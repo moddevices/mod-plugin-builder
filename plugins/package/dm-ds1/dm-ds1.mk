@@ -4,7 +4,7 @@
 #
 ######################################
 
-DM_DS1_VERSION = cdde8548bc420f39d4660b0f253dfac0a179e23c
+DM_DS1_VERSION = fc9ecdbb755ab5e4b2f6ac799ba353bcf26def53
 DM_DS1_SITE = https://github.com/davemollen/dm-DS1.git
 DM_DS1_SITE_METHOD = git
 DM_DS1_BUNDLES = dm-DS1.lv2

@@ -4,7 +4,7 @@
 #
 ######################################
 
-DM_FUZZ_VERSION = 6a4cf524d5b13043275e58def9400716984c78d8
+DM_FUZZ_VERSION = 3f0c5a7e61023aa72ef56b2781a330f1e1e890de
 DM_FUZZ_SITE = https://github.com/davemollen/dm-Fuzz.git
 DM_FUZZ_SITE_METHOD = git
 DM_FUZZ_BUNDLES = dm-Fuzz.lv2
